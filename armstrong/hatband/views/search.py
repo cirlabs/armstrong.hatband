@@ -1,7 +1,6 @@
 from armstrong.core.arm_layout.utils import render_model
 from django.conf import settings
-from django.conf.urls.defaults import patterns
-from django.conf.urls.defaults import url
+from django.conf.urls import patterns, url
 from django.contrib.contenttypes.models import ContentType
 from django.db.models import Q
 from django.http import HttpResponse
