@@ -88,13 +88,13 @@ ListItemView = Backbone.View.extend({
         return this;
     },
     deletePushed: function(evt) {
-        if (evt.detail < 1) {
+        //if (evt.detail < 1) {
           // workaround for a visualsearch bug, pressing enter when there's
           // invalid text in there causes it to "click" on the first button
           // If we don't do this we'll submit the whole form
-          evt.preventDefault();
-          return;
-        }
+        //  evt.preventDefault();
+        //  return;
+        //}
         this.model.set({DELETE: 1});
         $(this.el).hide('drop');
     }
@@ -162,7 +162,7 @@ SortableListView = ListView.extend({
     },
     sorted: function() {
         var models = _.map($(this.el).children(), _.bind(function(item){
-            return this.collection.getByCid($(item).attr('id'));
+            return this.collection.get($(item).attr('id'));
         }, this));
         _.each(models, _.bind(function(model, idx, list) {
             args = {}

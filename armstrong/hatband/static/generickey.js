@@ -46,10 +46,10 @@ armstrong.widgets.generickey = function($, options) {
             if (query.length <= 0) {
               return;
             }
-            var result = query.split(":", 2),
-                model = result[0],
-                content_type_id = facets.raw[model].id,
-                model_id = result[1].slice(2); // ditch the ' "'
+            var result = query.split(":", 2);
+            var model = result[0];
+            var content_type_id = facets.raw[model].id;
+            var model_id = result[1].slice(2); // ditch the ' "'
             if (!isNumber(model_id)) {
                 return;
             }
